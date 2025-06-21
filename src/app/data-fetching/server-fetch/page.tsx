@@ -11,11 +11,12 @@ interface productsResponse {
 }
 
 async function getProducts() : Promise<productsResponse> {
-    const response = await fetch("https://dummyjson.com/products");
+    const response = await fetch("https://dummyjson.com/products", {
+        cache : 'no-store'
+    });
 
     if(!response.ok)
         throw new Error("Fail to fetch products");
-
     return response.json();
 
 }
