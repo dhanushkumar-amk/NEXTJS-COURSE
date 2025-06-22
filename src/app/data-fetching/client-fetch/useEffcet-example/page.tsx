@@ -19,18 +19,15 @@ const useEffectExample = () => {
             try {
                 const res = await fetch("https://dummyjson.com/products");
                 const result = await res.json();
-                    setData(result.products);
-
+                setData(result.products);
             } catch (error) {
                 console.log(error);
             } finally {
                 setLoading(false);
             }
         };
-
         fetchListOfProducts();
-    }, []); 
-
+    }, []);
     return (
         <div>
             <h1>useEffect Example</h1>
@@ -50,5 +47,4 @@ const useEffectExample = () => {
         </div>
     );
 };
-
 export default useEffectExample;
